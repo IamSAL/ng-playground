@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatStepperModule } from "@angular/material/stepper"
 import { MatInputModule } from "@angular/material/input"
 import { MatButtonModule } from "@angular/material/button"
@@ -21,7 +21,7 @@ import { MatButtonModule } from "@angular/material/button"
 })
 export class EmployeeFormComponent {
   constructor(private builder: FormBuilder) {}
-  isLinear = false;
+  isLinear = true;
   Empregister = this.builder.group({
     basic: this.builder.group({
       firstname: this.builder.control('', Validators.required),
@@ -37,4 +37,25 @@ export class EmployeeFormComponent {
       city: this.builder.control('', Validators.required),
     }),
   });
+
+  get BasicInfoForm() {
+    return this.Empregister.get('basic') as FormGroup;
+  }
+  get ContactForm() {
+    return this.Empregister.get('contact') as FormGroup;
+  }
+  get AddressForm() {
+    return this.Empregister.get('address') as FormGroup;
+  }
+
+
+  handleSubmit() {
+    if (this.Empregister.valid) {
+      console.log(this.Empregister.value)
+      alert(JSON.stringify(this.Empregister.value))
+    }
+
+    console.log('submitted', this.Empregister);
+  }
+
 }
