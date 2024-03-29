@@ -53,6 +53,7 @@ export class EmployeeFormComponent {
     if (this.Empregister.valid) {
       console.log(this.Empregister.value)
       alert(JSON.stringify(this.Empregister.value))
+      this.Empregister.reset()
     }
 
     console.log('submitted', this.Empregister);
