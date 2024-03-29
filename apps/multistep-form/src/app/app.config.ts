@@ -5,6 +5,7 @@ import { FormBuilder } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(appRoutes), importProvidersFrom(FormBuilder), provideAnimations(), importProvidersFrom(CommonModule)],
+  providers: [provideRouter(appRoutes), importProvidersFrom(FormBuilder), provideAnimations(), importProvidersFrom(CommonModule), provideAnimationsAsync()],
 };

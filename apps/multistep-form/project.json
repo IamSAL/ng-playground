@@ -8,19 +8,26 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/multistep-form",
         "index": "apps/multistep-form/src/index.html",
         "browser": "apps/multistep-form/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/multistep-form/tsconfig.app.json",
         "inlineStyleLanguage": "sass",
         "assets": [
           "apps/multistep-form/src/favicon.ico",
           "apps/multistep-form/src/assets"
         ],
-        "styles": ["apps/multistep-form/src/styles.sass"],
+        "styles": [
+          "@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/multistep-form/src/styles.sass"
+        ],
         "scripts": []
       },
       "configurations": {
