@@ -1,0 +1,52 @@
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+  {{ !isLinear ? 'Enable linear mode' : 'Disable linear mode' }}
+</button>
+<div class="form-container">
+  <form [formGroup]="AspForm" (ngSubmit)="handleSubmit()">
+    <mat-stepper [linear]="isLinear" #stepper>
+      <mat-step label="Terms & Conditions" [stepControl]="AcceptControl">
+        <app-form-terms></app-form-terms>
+        <div>
+          <mat-checkbox formControlName="acceptTerms" class="example-margin"
+            >Accept terms & continue.</mat-checkbox
+          >
+
+          <div class="accept-btn">
+            <button matStepperNext mat-flat-button color="primary">
+              Proceed to next step
+            </button>
+          </div>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="BasicInfoForm">
+        <ng-template matStepLabel>Basic Information</ng-template>
+        <app-basic-info-form [formParent]="AspForm"> </app-basic-info-form>
+         <div class="accept-btn">
+            <button matStepperNext mat-flat-button color="primary">
+              Proceed to next step
+            </button>
+          </div>
+      </mat-step>
+
+      <mat-step label="Business Information">
+        <app-business-info-form></app-business-info-form>
+        <div class="accept-btn">
+            <button matStepperNext mat-flat-button color="primary">
+              Proceed to next step
+            </button>
+          </div>
+      </mat-step>
+      <mat-step label="Partner Information">
+        <app-partner-info-form></app-partner-info-form>
+        <div class="accept-btn">
+            <button matStepperNext mat-flat-button color="primary">
+              Proceed to next step
+            </button>
+          </div>
+      </mat-step>
+
+      <mat-step label="Preview Form"> </mat-step>
+    </mat-stepper>
+  </form>
+</div>

@@ -1,11 +1,13 @@
 import { Route } from '@angular/router';
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
+import { AspFormComponent } from './components/asp-form/asp-form.component';
 
 export const appRoutes: Route[] = [
   {
     path: '',
-    redirectTo: 'apps/employee-form',
+    redirectTo: 'asp-form',
     pathMatch:"full"
   },
-  { path: 'apps/employee-form', component: EmployeeFormComponent },
+  { path: 'employee-form', component: EmployeeFormComponent },
+  { path: 'asp-form', component: AspFormComponent },
 ];
