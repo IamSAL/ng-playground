@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 import {
   FormBuilder,
@@ -27,7 +27,7 @@ import { AddressFormComponent } from "../address-form/address-form.component";
         MatButtonModule,
         MatCheckboxModule,
         AddressFormComponent
-    ]
+  ],
 })
 export class BasicInfoFormComponent {
   @Input() formParent: FormGroup;

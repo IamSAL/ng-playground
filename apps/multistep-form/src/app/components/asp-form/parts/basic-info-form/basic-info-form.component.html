@@ -1,20 +1,7 @@
 
-
-<!-- <mat-grid-list cols="2" rowHeight="2:1">
-  <mat-grid-tile>1</mat-grid-tile>
-  <mat-grid-tile>2</mat-grid-tile>
-  <mat-grid-tile>3</mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
-</mat-grid-list> -->
-
-
-
-
-
-
 <form [formGroup]="formParent">
-  <div formGroupName="BasicInfoForm" class="flex ">
-    <div>
+  <div formGroupName="BasicInfoForm" class="grid grid-cols-2 gap-8 p-5">
+    <div class="">
       <mat-form-field>
         <mat-label>Name</mat-label>
         <input matInput placeholder="Name" formControlName="name" required />
@@ -133,7 +120,8 @@
     </div>
   </div>
 
-  <div formGroupName="present_address">
+  <div class="grid grid-cols-2 gap-8 px-5">
+    <div formGroupName="present_address">
     <h2>Present Address</h2>
     <app-address-form></app-address-form>
   </div>
@@ -141,5 +129,6 @@
   <div formGroupName="permanent_address">
     <h2>Permanent Address</h2>
     <app-address-form></app-address-form>
+  </div>
   </div>
 </form>

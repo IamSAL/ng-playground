@@ -1,3 +1,7 @@
 input[type=file]{
   margin-bottom: 25px;
 }
+
+mat-form-field {
+    width: 100%;
+}

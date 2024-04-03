@@ -77,7 +77,7 @@ export class AspFormComponent {
       vat_bin_number: this.builder.control('', Validators.required),
       vat_file: this.builder.control('', Validators.required),
       tax_return_file: this.builder.control('', Validators.required),
-      trade_license_file: this.AddressForm,
+      trade_license_file: this.builder.control('', Validators.required),
     }),
     PartnerInfoForm: this.builder.group({
       name: this.builder.control('', Validators.required),

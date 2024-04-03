@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormGroup } from '@angular/forms';
 import { MatFormField, MatInput, MatLabel } from '@angular/material/input';
@@ -9,6 +9,6 @@ import { MatCheckbox } from '@angular/material/checkbox';
   standalone: true,
   imports: [CommonModule, MatCheckbox, MatInput, MatFormField, MatLabel],
   templateUrl: './address-form.component.html',
-  styleUrl: './address-form.component.scss',
+  styleUrl: './address-form.component.scss'
 })
 export class AddressFormComponent {}
