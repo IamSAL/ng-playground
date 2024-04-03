@@ -472,7 +472,7 @@ import { CommonModule } from '@angular/common';
         <!--  MIDDLE CONTENT  -->
         <div id="middle-content">
           <div id="learning-materials" class="rounded shadow">
-            <h2>Learning materials</h2>
+            <h2 class="">Learning materials</h2>
             <a
               href="https://nx.dev/getting-started/intro?utm_source=nx-project"
               target="_blank"
