@@ -1,9 +1,10 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 import {
   FormBuilder,
   FormControl,
   FormGroup,
+  FormGroupDirective,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
@@ -13,25 +14,34 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AddressFormComponent } from "../address-form/address-form.component";
+import { AspFormBuilderService } from '../../../../services/asp-form-builder.service';
+
 
 
 @Component({
-    selector: 'app-basic-info-form',
-    standalone: true,
-    templateUrl: './basic-info-form.component.html',
-    styleUrl: './basic-info-form.component.css',
-    imports: [
-        ReactiveFormsModule,
-        MatStepperModule,
-        MatInputModule,
-        MatButtonModule,
-        MatCheckboxModule,
-        AddressFormComponent
+  selector: 'app-basic-info-form',
+  standalone: true,
+  templateUrl: './basic-info-form.component.html',
+  styleUrl: './basic-info-form.component.css',
+  imports: [
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    AddressFormComponent,
   ],
 })
-export class BasicInfoFormComponent {
-  @Input() formParent: FormGroup;
-  constructor(private builder: FormBuilder) {
-    this.formParent=this.builder.group({})
+export class BasicInfoFormComponent implements OnInit {
+  formParent!: FormGroup;
+  constructor(private formBuilderService: AspFormBuilderService) {}
+  ngOnInit(): void {
+    this.formParent = this.formBuilderService.BasicInfoFormGroup;
+  }
+  get PresentAddressForm() {
+    return this.formParent.get('present_address') as FormGroup;
+  }
+  get PermanentAddressForm() {
+    return this.formParent.get('permanent_address') as FormGroup;
   }
 }

@@ -21,32 +21,44 @@
 
       <mat-step [stepControl]="BasicInfoForm">
         <ng-template matStepLabel>Basic Information</ng-template>
-        <app-basic-info-form [formParent]="AspForm"> </app-basic-info-form>
-         <div class="accept-btn">
-            <button matStepperNext mat-flat-button color="primary">
-              Proceed to next step
-            </button>
-          </div>
+
+        <app-basic-info-form> </app-basic-info-form>
+
+        <div class="accept-btn">
+          <button matStepperNext mat-flat-button color="primary">
+            Proceed to next step
+          </button>
+        </div>
       </mat-step>
 
-      <mat-step label="Business Information">
-        <app-business-info-form></app-business-info-form>
+      <mat-step label="Business Information" [stepControl]="BusinessInfoForm">
+        <app-business-info-form
+        ></app-business-info-form>
         <div class="accept-btn">
-            <button matStepperNext mat-flat-button color="primary">
-              Proceed to next step
-            </button>
-          </div>
-      </mat-step>
-      <mat-step label="Partner Information">
-        <app-partner-info-form></app-partner-info-form>
-        <div class="accept-btn">
-            <button matStepperNext mat-flat-button color="primary">
-              Proceed to next step
-            </button>
-          </div>
+          <button matStepperNext mat-flat-button color="primary">
+            Proceed to next step
+          </button>
+        </div>
       </mat-step>
 
-      <mat-step label="Preview Form"> </mat-step>
+      <mat-step [stepControl]="PartnerInfoForm">
+        <ng-template matStepLabel>Partner Information</ng-template>
+
+        <app-partner-info-form
+
+        >
+        </app-partner-info-form>
+
+        <div class="accept-btn">
+          <button matStepperNext mat-flat-button color="primary">
+            Proceed to next step
+          </button>
+        </div>
+      </mat-step>
+
+      <mat-step label="Preview Form">
+        <app-form-preview></app-form-preview>
+      </mat-step>
     </mat-stepper>
   </form>
 </div>

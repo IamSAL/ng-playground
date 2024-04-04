@@ -1,142 +1,144 @@
-<div class="grid grid-cols-2 gap-8 my-2 p-5">
-  <div>
-  <mat-form-field>
-    <mat-label>Ownership Category</mat-label>
-    <input
-      matInput
-      placeholder="Ownership Category"
-      formControlName="ownership_category"
-      required
-    />
-  </mat-form-field>
-</div>
-<div>
-  <mat-form-field>
-    <mat-label>Name of Organization</mat-label>
-    <input
-      matInput
-      placeholder="Name of Organization"
-      formControlName="name_of_organization"
-      required
-    />
-  </mat-form-field>
-</div>
-<div>
-  <mat-form-field>
-    <mat-label>Business Type</mat-label>
-    <input
-      matInput
-      placeholder="Business Type"
-      formControlName="business_type"
-      required
-    />
-  </mat-form-field>
-</div>
-</div>
-<div class="grid grid-cols-2 gap-8">
-  <div>
-  <h2>Organization Address</h2>
-  <div formGroupName="organization_address">
-    <app-address-form></app-address-form>
+<ng-container [formGroup]="formParent">
+  <div class="grid grid-cols-2 gap-8 my-2 p-5">
+    <div>
+      <mat-form-field>
+        <mat-label>Ownership Category</mat-label>
+        <input
+          matInput
+          placeholder="Ownership Category"
+          formControlName="ownership_category"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Name of Organization</mat-label>
+        <input
+          matInput
+          placeholder="Name of Organization"
+          formControlName="name_of_organization"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Business Type</mat-label>
+        <input
+          matInput
+          placeholder="Business Type"
+          formControlName="business_type"
+          required
+        />
+      </mat-form-field>
+    </div>
   </div>
-</div>
-<div>
-  <h2>Head Office Address</h2>
-  <div formGroupName="head_office_address">
-    <app-address-form></app-address-form>
+  <div class="grid grid-cols-2 gap-8">
+    <div>
+      <h2>Organization Address</h2>
+      <div>
+        <app-address-form
+          [formParent]="OrganizationAddressForm"
+        ></app-address-form>
+      </div>
+    </div>
+    <div>
+      <h2>Head Office Address</h2>
+      <div>
+        <app-address-form
+          [formParent]="HeadOfficeAddressForm"
+        ></app-address-form>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 
-<hr class="my-5">
-<div class="grid grid-cols-2 gap-8">
+  <hr class="my-5" />
+  <div class="grid grid-cols-2 gap-8">
+    <div class="">
+      <mat-form-field>
+        <mat-label>Geo Location</mat-label>
+        <input
+          matInput
+          placeholder="Geo Location"
+          formControlName="geo_location"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Business Merchant Category Code</mat-label>
+        <input
+          matInput
+          placeholder="Business Merchant Category Code"
+          formControlName="business_merchant_category_code"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>TIN Number</mat-label>
+        <input
+          matInput
+          placeholder="TIN Number"
+          formControlName="tin_number"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>VAT/BIN Number</mat-label>
+        <input
+          matInput
+          placeholder="VAT BIN Number"
+          formControlName="vat_bin_number"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <h3>TIN Certificate File</h3>
+      <input
+        type="file"
+        placeholder="TIN Certificate File"
+        formControlName="tin_certificate_file"
+        required
+      />
+      <br />
+    </div>
 
+    <div>
+      <h3>VAT File</h3>
+      <input
+        type="file"
+        placeholder="VAT File"
+        formControlName="vat_file"
+        required
+      />
+    </div>
+    <div>
+      <h3>Tax Return File</h3>
+      <input
+        type="file"
+        placeholder="Tax Return File"
+        formControlName="tax_return_file"
+        required
+      />
+      <br />
+    </div>
 
-<div class="">
-  <mat-form-field>
-    <mat-label>Geo Location</mat-label>
-    <input
-      matInput
-      placeholder="Geo Location"
-      formControlName="geo_location"
-      required
-    />
-  </mat-form-field>
-</div>
-<div>
-  <mat-form-field>
-    <mat-label>Business Merchant Category Code</mat-label>
-    <input
-      matInput
-      placeholder="Business Merchant Category Code"
-      formControlName="business_merchant_category_code"
-      required
-    />
-  </mat-form-field>
-</div>
-<div>
-  <mat-form-field>
-    <mat-label>TIN Number</mat-label>
-    <input
-      matInput
-      placeholder="TIN Number"
-      formControlName="tin_number"
-      required
-    />
-  </mat-form-field>
-</div>
-<div>
-  <mat-form-field>
-    <mat-label>VAT/BIN Number</mat-label>
-    <input
-      matInput
-      placeholder="VAT BIN Number"
-      formControlName="vat_bin_number"
-      required
-    />
-  </mat-form-field>
-</div>
-<div>
-  <h3>TIN Certificate File</h3>
-  <input
-    type="file"
-    placeholder="TIN Certificate File"
-    formControlName="tin_certificate_file"
-    required
-  />
-  <br />
-</div>
-
-<div>
-  <h3>VAT File</h3>
-  <input
-    type="file"
-    placeholder="VAT File"
-    formControlName="vat_file"
-    required
-  />
-</div>
-<div>
-  <h3>Tax Return File</h3>
-  <input
-    type="file"
-    placeholder="Tax Return File"
-    formControlName="tax_return_file"
-    required
-  />
-  <br />
-</div>
-
-<div>
-  <h3>Trade License File</h3>
-  <input
-    type="file"
-    placeholder="Trade License File"
-    formControlName="trade_license_file"
-    required
-  />
-  <br />
-</div>
-
-</div>
-
+    <div>
+      <h3>Trade License File</h3>
+      <input
+        type="file"
+        placeholder="Trade License File"
+        formControlName="trade_license_file"
+        required
+      />
+      <br />
+    </div>
+  </div>
+</ng-container>
