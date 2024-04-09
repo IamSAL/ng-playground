@@ -70,8 +70,6 @@ export class AspFormComponent implements OnInit {
   handleSubmit() {
     if (this.AspForm.valid) {
       console.log(this.AspForm.value);
-      alert(JSON.stringify(this.AspForm.value));
-      this.AspForm.reset();
     }
 
     console.log('submitted', this.AspForm);

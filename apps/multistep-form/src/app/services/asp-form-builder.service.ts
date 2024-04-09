@@ -16,7 +16,7 @@ export class AspFormBuilderService {
         mother_name: this.builder.control('', Validators.required),
         spouse_name: this.builder.control('', Validators.required),
         phone: this.builder.control('', Validators.required),
-        email: this.builder.control('', Validators.required),
+        email: this.builder.control('', [Validators.required,Validators.email]),
         gender: this.builder.control('', Validators.required),
         nationality: this.builder.control('', Validators.required),
         dob: this.builder.control('', Validators.required),
